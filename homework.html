@@ -79,11 +79,11 @@
         console.log("next" + prev);
         margin -= slide_div_length + 20; // burada divin olcusu + margin qeder cixmasi ucun yazdim margini-de "slide_div_length" kimi goturmek olardi
         var slides_div_margin = document.getElementsByClassName("slides")[0].style.marginLeft = margin + 'px'; //her click-liyende slides divi-i hereket edir lefte dogru
-
-        if (prev == slider_length - 4) // burada "slider_length - 4 " yeni 9-5 demekdir burada 4 ekranda 5 div gorsendiyi ucundur
+        console.log(slides_div_margin);
+        if (prev > slider_length - 5) // burada "slider_length - 5 " yeni 9-5 demekdir burada 5 ekranda 5 div gorsendiyi ucundur
         {
             margin = 0; // 5 -i almaq ucunde optmimal elemek olardi heleki sadelik ucun bele yazdim
-            var slides_div_margin = document.getElementsByClassName("slides")[0].style.marginLeft = margin + 'px'; //her click-liyende slides divi-i hereket edir lefte dogru
+            slides_div_margin = document.getElementsByClassName("slides")[0].style.marginLeft = margin + 'px'; //her click-liyende slides divi-i hereket edir lefte dogru
             prev = 0;
         }
     }
@@ -98,8 +98,9 @@
         var slides_div_margin = document.getElementsByClassName("slides")[0].style.marginLeft = margin + 'px'; //her click-liyende slides divi-i hereket edir lefte dogru
         console.log("prev" + prev);
 
-        if (prev <= -1) {
+        if (prev <= 0) {
             margin = 0;
+            prev = 0;
             var slides_div_margin = document.getElementsByClassName("slides")[0].style.marginLeft = margin + 'px'; //her click-liyende slides divi-i hereket edir lefte dogru
         }
     }
